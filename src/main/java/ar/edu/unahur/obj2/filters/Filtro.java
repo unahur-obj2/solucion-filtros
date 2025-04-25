@@ -1,6 +1,6 @@
 package ar.edu.unahur.obj2.filters;
 
-public abstract class Filtro implements IFiltro {
+public abstract class Filtro implements IFiltro  {
 
     @Override
     public IFiltro and(IFiltro filtro) {
