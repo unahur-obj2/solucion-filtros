@@ -1,0 +1,13 @@
+ar/edu/unahur/obj2/filters/FiltroCompuesto.class
+ar/edu/unahur/obj2/filters/IFiltro.class
+ar/edu/unahur/obj2/service/IPaisService.class
+ar/edu/unahur/obj2/service/IConvierteDatos.class
+ar/edu/unahur/obj2/model/Pais.class
+ar/edu/unahur/obj2/service/PaisService.class
+ar/edu/unahur/obj2/Main.class
+ar/edu/unahur/obj2/filters/FiltroAnd.class
+ar/edu/unahur/obj2/model/Idioma.class
+ar/edu/unahur/obj2/filters/FiltroOr.class
+ar/edu/unahur/obj2/service/ConvierteDatos.class
+ar/edu/unahur/obj2/model/DatosPais.class
+ar/edu/unahur/obj2/service/ConsumoRecurso.class

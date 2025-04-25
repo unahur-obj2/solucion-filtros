@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PaisService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">filtros</a> &gt; <a href="index.source.html" class="el_package">ar.edu.unahur.obj2.service</a> &gt; <span class="el_source">PaisService.java</span></div><h1>PaisService.java</h1><pre class="source lang-java linenums">package ar.edu.unahur.obj2.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import ar.edu.unahur.obj2.model.DatosPais;
+import ar.edu.unahur.obj2.model.Pais;
+
+<span class="fc" id="L10">public class PaisService implements IPaisService {</span>
+
+<span class="fc" id="L12">    private final ConsumoRecurso consumoRecurso = new ConsumoRecurso();</span>
+<span class="fc" id="L13">    private final ConvierteDatos conversor = new ConvierteDatos();</span>
+<span class="fc" id="L14">    private List &lt;DatosPais&gt; datosPaises = new ArrayList&lt;&gt;();</span>
+
+    @Override
+    public List&lt;Pais&gt; getPaises() { 
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if(datosPaises.isEmpty()){</span>
+<span class="fc" id="L19">            datosPaises = solicitarPaises();</span>
+        }  
+<span class="fc" id="L21">        return datosPaises.stream()</span>
+<span class="fc" id="L22">                .map(dp -&gt; new Pais(dp))</span>
+<span class="fc" id="L23">                .collect(Collectors.toList());</span>
+        
+    }
+    
+    private List&lt;DatosPais&gt; solicitarPaises(){
+<span class="fc" id="L28">        var json = consumoRecurso.obtenerDatos();</span>
+<span class="fc" id="L29">        return conversor.obtenerListaDatos(json, DatosPais.class);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
